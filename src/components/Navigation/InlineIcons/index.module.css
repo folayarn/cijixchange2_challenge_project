@@ -1,0 +1,25 @@
+.icon li{
+  width: 100%;
+  display: inline;
+  list-style: none;
+  margin-left: 17%;
+}
+
+.icon{
+  padding: 9%;
+}
+
+
+@media (max-width: 900px) {
+  
+}
+@media (min-width:768px) and (max-width:1028px) {
+  
+.icon{
+  padding: 14%;
+}
+.icon li{
+  margin-left: 15%;
+}
+
+}

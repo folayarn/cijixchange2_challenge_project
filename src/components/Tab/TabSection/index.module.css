@@ -1,0 +1,12 @@
+.ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 1% 1%;
+}
+
+
+@media (max-width:767px){
+
+
+
+}

@@ -1,0 +1,46 @@
+.card{
+  border-width: 0px !important;
+  box-shadow: 3px 5px 25px rgba(0,0,0,0.2);
+  border-radius: 15px;
+}
+
+.card ul li{
+  list-style: none;
+}
+
+.post_section{
+padding: 10px !important;
+border-radius: 20px;
+margin-top:60px;
+}
+.Button{
+  color:white;
+  background-color: rgb(26, 11, 95) !important;
+  border: 0px !important;
+  padding: 10px !important;
+  font-size: small !important;
+}
+
+.salary{
+  font-size: 12pt;
+  padding:10px;
+}
+
+.tag li {
+  display: inline-block;
+  font-size: 7pt;
+  padding: 4px;
+  margin: 6px;
+  color: white;
+  background-color: #046ad8;
+  border-radius: 3px;
+  border-width: 0px;
+}
+.tag li:hover {
+  background-color: rgb(190, 188, 188);
+  cursor: pointer;
+}
+.tag {
+  width: 100%;
+  list-style: none;
+}

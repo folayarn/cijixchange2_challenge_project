@@ -1,0 +1,16 @@
+.Wrapper {
+  color:rgb(139, 135, 161);
+}
+
+.Container{
+height: 500px;
+overflow-y: scroll;
+}
+
+.Container::-webkit-scrollbar {
+  width: 10px;
+}
+.Container::-webkit-scrollbar-thumb {
+  background: #f5e8bf;
+  border-radius: 10px;
+}

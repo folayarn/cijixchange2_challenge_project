@@ -1,0 +1,45 @@
+
+
+.list li{
+  list-style: none;
+  padding: 5%;
+  
+}
+
+.list li span{
+  margin-right: 10%;
+}
+
+.sideNavigation{
+  border-right: 1px solid rgb(243, 242, 242);
+  height:auto ;
+  margin-bottom: 30px;
+  padding:0% !important;
+  
+}
+
+.list li .a{
+  color:rgb(139, 135, 161);
+  text-decoration: none;
+}
+
+.list li .a:focus{
+  color:rgb(240, 188, 17);
+}
+.header span{
+margin-left: -20%;
+}
+.header{
+  margin: 10% 10% 10% 10%;
+  display:inline-block;
+}
+
+@media (min-width:768px) and (max-width:1028px) {
+  .header{
+  margin: 2% 3% 4% 0%;
+}
+
+
+}
+
+
