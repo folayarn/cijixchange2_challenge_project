@@ -2,6 +2,8 @@ import React from 'react';
 import {Table,Form,Button,Row,Col} from 'react-bootstrap'
 import { useSelector } from 'react-redux';
 import classes from './index.module.css'
+import Icon from '../../../../shared/Icon'
+import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 
 const TableContainer=()=> {
   const gig =useSelector(state=>state.gig.gig)
@@ -16,8 +18,8 @@ const TableContainer=()=> {
         <th></th>
       <th>Role</th>
       <th>Company</th>
-      <th>Date</th>
-      <th>Salary</th>
+      <th>Date <Icon size="sm" icon={faExpandAlt} /></th>
+      <th>Salary($) <Icon size="sm"  icon={faExpandAlt} /> </th>
       <th></th>
       </tr>
       </thead>

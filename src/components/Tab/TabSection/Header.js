@@ -3,7 +3,11 @@ import {Col} from 'react-bootstrap'
 import TabIcons from './TabIcons';
 import Icon from '../../../shared/Icon'
 import classes from './index.module.css'
-import { faArrowDown, faBriefcase, faCheck, faFilter,faGlobe,faMapMarker } from '@fortawesome/free-solid-svg-icons';
+import { 
+   faArrowsAlt, faBriefcase,
+   faChevronDown, faCheck,faGlobe,
+   faMapMarker } 
+   from '@fortawesome/free-solid-svg-icons';
 import { faDev } from '@fortawesome/free-brands-svg-icons';
 
 const Header=()=> {
@@ -12,12 +16,12 @@ const Header=()=> {
 <ul className={classes.ul}>
 <li><TabIcons  text="Freelance" /></li>
 
-  <li><TabIcons icon={ <Icon size="1x" icon={faFilter} /> } text="Keywords"
-  drop={<Icon size="1x" icon={faArrowDown} /> }
+  <li><TabIcons icon={ <Icon size="1x" icon={faArrowsAlt} /> } text="Keywords"
+  drop={<Icon size="1x" icon={faChevronDown} /> }
   /></li>
 
 <li><TabIcons icon={ <Icon size="1x" icon={faMapMarker} /> } text="Location"
-  drop={<Icon size="1x" icon={faArrowDown} /> }
+  drop={<Icon size="1x" icon={faChevronDown} /> }
   /></li>
   <li><TabIcons icon={ <Icon size="1x" icon={faGlobe} /> } text="Remote Friendly"
   

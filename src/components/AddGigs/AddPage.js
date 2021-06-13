@@ -4,40 +4,59 @@ import classes from './index.module.css'
 import {on_track} from '../../store/actions/gigActions'
 import {useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
+import { WithContext as ReactTags } from 'react-tag-input';
+
+
+
 
 
 
 const AddPage=()=>{
+
+  const suggestions=[
+    { id: 'USA', text: 'USA' },
+    { id: 'Germany', text: 'Germany' },
+    { id: 'Austria', text: 'Austria' },
+    { id: 'Costa Rica', text: 'Costa Rica' },
+    { id: 'Sri Lanka', text: 'Sri Lanka' },
+    { id: 'Thailand', text: 'Thailand' }
+  ]
   const dispatch = useDispatch();
   const [tags, setTags] = useState([]);
-  const [val, setVal] = useState("");
+  const [suggestion,setSuggestion]=useState(suggestions)
+
+  const KeyCodes = {
+    comma: 188,
+    enter: 13,
+  };
+  const delimiters = [KeyCodes.comma, KeyCodes.enter];
   
 const onSubmit=()=>{
  dispatch(on_track(true))
 }
-const addClick = () => {
-  const value = val.toUpperCase();
-  if (tags.find((tag) => tag.toUpperCase() === value)) {
-    return;
-  }
-  if (value === "") {
-    return;
-  }
-  setTags([...tags, value]);
-  setVal("");
-  console.log(tags)
-};
 
-const deleteTag = (tagIndex) => {
-  const newTags = [...tags];
-  newTags.splice(tagIndex, 1);
+const filterTags=(value,suggested)=> {
+  var query = value.toLowerCase()
+  var data= suggested.filter((suggestion)=> 
+  suggestion.toLowerCase().includes(query)
+  )
+  setSuggestion(data)
+}
+ const handleAddition=(tag)=> {
+  setTags([...tags, tag]);
+}
+const handleDrag=(tag, currPos, newPos)=> {
+  const tags = [...tags];
+  const newTags = tags.slice();
+  newTags.splice(currPos, 1);
+  newTags.splice(newPos, 0, tag);
   setTags(newTags);
-};
+}
+const handleDelete=(i)=>{
+  const data=tags.filter((tag, index) => index !== i)
+  setTags(data)
+}
 
-const onChange = (e) => {
-  setVal(e.target.value);
-  console.log(val)
-};
 
 
   return(
@@ -80,30 +99,28 @@ const onChange = (e) => {
   </Col>
 </Row>
 
-<Col>
+<Col md={12}>
 <Form.Group>
 <Form.Label>{'  '}</Form.Label>
     <Form.Control type="text" placeholder="Address"/>
 </Form.Group>
 </Col>
 
-<Col>
+<Col md={12}>
   <Form.Group>
-    <Form.Label>Add tags:</Form.Label>
-    <Form.Control type="text" 
-    value={val}
-    className={classes.input}
-    onChange={(e) => onChange(e)}
-    disabled={tags.length === 2 ? true : false}
-    onBlur={addClick}
-    />
-    <ul className={classes.tag}>
-                  {tags.map((tag, index) => (
-                    <li key={index} onClick={() => deleteTag(index)}>
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
+
+    <ReactTags 
+    inline
+                      tags={tags}
+                    suggestions={suggestion}
+                    handleDelete={handleDelete}
+                    handleAddition={handleAddition}
+                    handleDrag={handleDrag}
+                    delimiters={delimiters} 
+                   
+                    
+                    id={'tags'}
+                    />
 </Form.Group>
   </Col>
 
