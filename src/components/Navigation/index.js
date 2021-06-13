@@ -15,7 +15,7 @@ const Navigation=()=> {
         </h4>
 
       <ul className={classes.list}>
-        <li ><Link to="/" className={classes.a}><span><Icon size='1x' icon={faHome} /> </span>DashBoard</Link> </li>
+        <li ><Link to="/" className={classes.a}><span><Icon size='1x' icon={faHome} /> </span>Dashboard</Link> </li>
         <li ><Link to="/gigs" className={classes.a}><span><Icon size='1x' icon={faGift} /> </span>Gigs</Link></li>
         <li ><Link className={classes.a}><span><Icon size='1x' icon={faAddressBook} /> </span>Company</Link></li>
         <li ><Link className={classes.a}><span><Icon size='1x' icon={faUser} /> </span>Account</Link></li>
