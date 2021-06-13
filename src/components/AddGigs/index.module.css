@@ -12,6 +12,7 @@
 padding: 10px !important;
 border-radius: 20px;
 margin-top:60px;
+font-size: 10pt;
 }
 .Button{
   color:white;
@@ -20,27 +21,12 @@ margin-top:60px;
   padding: 10px !important;
   font-size: small !important;
 }
-
+.card input[type="text"]{
+  outline:none !important;
+}
 .salary{
-  font-size: 12pt;
+  font-size: 10pt;
   padding:10px;
 }
 
-.tag li {
-  display: inline-block;
-  font-size: 7pt;
-  padding: 4px;
-  margin: 6px;
-  color: white;
-  background-color: #046ad8;
-  border-radius: 3px;
-  border-width: 0px;
-}
-.tag li:hover {
-  background-color: rgb(190, 188, 188);
-  cursor: pointer;
-}
-.tag {
-  width: 100%;
-  list-style: none;
-}
+

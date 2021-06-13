@@ -14,17 +14,14 @@ import { WithContext as ReactTags } from 'react-tag-input';
 const AddPage=()=>{
 
   const suggestions=[
-    { id: 'USA', text: 'USA' },
-    { id: 'Germany', text: 'Germany' },
-    { id: 'Austria', text: 'Austria' },
-    { id: 'Costa Rica', text: 'Costa Rica' },
-    { id: 'Sri Lanka', text: 'Sri Lanka' },
-    { id: 'Thailand', text: 'Thailand' }
+    { id: 'Contract', text: 'Contract' },
+    { id: 'Fulltime', text: 'Fulltime' },
+    { id: 'Freelance', text: 'Freelance' },
+    
   ]
   const dispatch = useDispatch();
   const [tags, setTags] = useState([]);
-  const [suggestion,setSuggestion]=useState(suggestions)
-
+  
   const KeyCodes = {
     comma: 188,
     enter: 13,
@@ -35,13 +32,7 @@ const onSubmit=()=>{
  dispatch(on_track(true))
 }
 
-const filterTags=(value,suggested)=> {
-  var query = value.toLowerCase()
-  var data= suggested.filter((suggestion)=> 
-  suggestion.toLowerCase().includes(query)
-  )
-  setSuggestion(data)
-}
+
  const handleAddition=(tag)=> {
   setTags([...tags, tag]);
 }
@@ -107,20 +98,22 @@ const handleDelete=(i)=>{
 </Col>
 
 <Col md={12}>
-  <Form.Group>
-
+  <Form.Group style={{ marginTop:'10px' }}>
+<Form.Label>Add tags</Form.Label>
     <ReactTags 
-    inline
-                      tags={tags}
-                    suggestions={suggestion}
+                    inline
+                    tags={tags}
                     handleDelete={handleDelete}
                     handleAddition={handleAddition}
                     handleDrag={handleDrag}
                     delimiters={delimiters} 
-                   
-                    
                     id={'tags'}
+                    maxLength = "9"
+                  
                     />
+                    <span>suggested tags: <i>Fulltime,</i> <i>Contract</i> <i>Freelance</i>
+                    
+                    </span>
 </Form.Group>
   </Col>
 

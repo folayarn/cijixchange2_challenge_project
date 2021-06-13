@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color:rgb(83, 80, 88)
+  color:rgb(83, 80, 88);
 }
 
 a.nav-link.active{
@@ -13,8 +13,31 @@ a.nav-link.active{
   
   font-weight: bold !important;
   background-color: white !important;
-  border-bottom: 2px solid rgb(240, 188, 17) !important;
+  border: 2px solid rgb(240, 188, 17) !important;
   
+}
+
+.ReactTags__remove{
+  border: none;
+  color:rgb(240, 188, 17);
+  background-color: rgb(252, 241, 205);
+}
+
+.ReactTags__tag{
+  color:rgb(240, 188, 17) !important;
+  background-color: rgb(252, 241, 205);
+  padding: 5px;
+  margin:3px;
+}
+
+#tags {
+  margin-top:4px;
+  min-width: 100%;
+  padding:10px;
+  outline: none;
+  padding: 8px;
+  border-radius: 1px;
+  border: 1px solid rgb(207, 207, 207);
 }
 
 
