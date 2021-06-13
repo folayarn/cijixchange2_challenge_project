@@ -13,7 +13,7 @@ a.nav-link.active{
   
   font-weight: bold !important;
   background-color: white !important;
-  border: 2px solid rgb(240, 188, 17) !important;
+  border-bottom: 1px solid rgb(240, 188, 17) !important;
   
 }
 
